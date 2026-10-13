@@ -32,4 +32,13 @@ class Chapter1Test {
         assertTrue(Chapter1.permutation("abc", "cba"));
         assertTrue(Chapter1.permutation("", ""));
     }
+
+    @Test
+    void optimalPermutation() {
+        assertTrue(Chapter1.permutation("aaa", "aaa"));
+        assertFalse(Chapter1.permutation("aab", "aaa"));
+        assertFalse(Chapter1.permutation("abc", "aaa"));
+        assertTrue(Chapter1.permutation("abc", "cba"));
+        assertTrue(Chapter1.permutation("", ""));
+    }
 }
