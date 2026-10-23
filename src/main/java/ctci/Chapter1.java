@@ -84,8 +84,11 @@ public class Chapter1 {
     // 1.3
     // my solution
     public static void replaceSpaces(char[] str, int length) {
-
+        
     }
+
+
+
 
 
 }
