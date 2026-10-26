@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+// Help with syntax when submitting leetcode problems
 public class LeetCode {
+
+
     public static int[] twoSum(int[] nums, int target) {
 
         HashMap<Integer, Integer> myMap = new HashMap<Integer, Integer>();
@@ -18,6 +21,8 @@ public class LeetCode {
         }
         return new int[]{0,0};
     }
+
+
 
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> mySet = new HashSet<>();
