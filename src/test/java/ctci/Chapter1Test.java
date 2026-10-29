@@ -41,4 +41,9 @@ class Chapter1Test {
         assertTrue(Chapter1.permutation("abc", "cba"));
         assertTrue(Chapter1.permutation("", ""));
     }
+
+    @Test
+    void stringCompression() {
+        assertEquals("a2b1c5a3", Chapter1.stringCompression("aabcccccaaa"));
+    }
 }

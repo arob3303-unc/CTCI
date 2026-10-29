@@ -87,8 +87,20 @@ public class Chapter1 {
         
     }
 
+    // 1.6 String Compression
+    public static String stringCompression(String s) {
+        StringBuilder compression = new StringBuilder();
+        int currCount = 0;
 
+        for (int i = 0; i < s.length(); i++) {
+            currCount++;
 
-
-
+            if (i + 1 >= s.length() || s.charAt(i) != s.charAt(i+1)) {
+                compression.append(s.charAt(i));
+                compression.append(currCount);
+                currCount = 0;
+            }
+        }
+        return compression.toString();
+    }
 }
