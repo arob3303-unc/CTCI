@@ -103,4 +103,49 @@ public class Chapter1 {
         }
         return compression.toString();
     }
+
+    // 1.7 matrix rotate 90 degrees
+    public static void rotateMatrix(int[][] matrix, int n) {
+        // book solution
+        for (int layer = 0; layer < n / 2; ++layer) {
+            int first = layer;
+            int last = n - 1 - layer;
+
+            for (int i = first; i < last; ++i) {
+                int offset = i - first;
+
+                int top = matrix[first][i];
+                matrix[first][i] = matrix[last - offset][first];
+                matrix[last - offset][first] = matrix[last][last - offset];
+                matrix[last][last - offset] = matrix[i][last];
+                matrix[i][last] = top;
+            }
+        }
+    }
+
+    // my solution
+    public static void rotateMatrixMine(int[][] matrix) {
+        int n = matrix.length;
+
+        // keep track of ring
+        for (int i = 0; i < n / 2; i++) {
+            int last = n - i - 1;
+            for (int j = i; j < last; j++) {
+                int offset = j - i;
+
+                int top = matrix[i][j];
+                matrix[i][j] = matrix[last-offset][i];
+                matrix[last-offset][i] = matrix[last][last - offset];
+                matrix[last][last - offset] = matrix[i][last];
+                matrix[i][last] = top;
+            }
+        }
+    }
+
+
+    // 1.8 "zero matrix". Given MxN matrix, if an element is 0, the row and column for the 0 should all be 0s
+    public static void zeroMatrix(int[][] matrix) {
+        // my solution
+
+    }
 }

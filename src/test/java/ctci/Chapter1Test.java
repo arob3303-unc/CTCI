@@ -46,4 +46,22 @@ class Chapter1Test {
     void stringCompression() {
         assertEquals("a2b1c5a3", Chapter1.stringCompression("aabcccccaaa"));
     }
+
+    @Test
+    void rotateMatrix() {
+        int[][] arr2d = {{1, 2},
+                         {3, 4}
+        };
+        Chapter1.rotateMatrix(arr2d, 2); // changes arr2d
+        assertArrayEquals(new int[][] {{3,1}, {4,2}}, arr2d);
+    }
+
+    @Test
+    void rotateMatrixMine() {
+        int[][] arr2d = {{1, 2},
+                {3, 4}
+        };
+        Chapter1.rotateMatrixMine(arr2d); // changes arr2d
+        assertArrayEquals(new int[][] {{3,1}, {4,2}}, arr2d);
+    }
 }
