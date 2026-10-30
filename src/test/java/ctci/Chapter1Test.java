@@ -82,4 +82,40 @@ class Chapter1Test {
         Chapter1.zeroMatrix(m);
         assertArrayEquals(expected, m);
     }
+
+    @Test
+    void zeroMatrixBook() {
+        int[][] m = {
+                {0, 1, 1, 1, 0},
+                {1, 1, 1, 1, 1},
+                {0, 1, 1, 1, 0}
+        };
+
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0}
+        };
+
+        Chapter1.zeroMatrixBook(m);
+        assertArrayEquals(expected, m);
+    }
+
+    @Test
+    void zeroMatrixBook2() {
+        int[][] m = {
+                {0, 1, 1, 1, 0},
+                {1, 1, 1, 1, 1},
+                {0, 1, 1, 1, 0}
+        };
+
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0}
+        };
+
+        Chapter1.zeroMatrixBook2(m);
+        assertArrayEquals(expected, m);
+    }
 }

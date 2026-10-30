@@ -180,4 +180,97 @@ public class Chapter1 {
         }
     }
 
+    //
+    public static void zeroMatrixBook(int[][] matrix) {
+        // first book solution
+        boolean[] row = new boolean[matrix.length];
+        boolean[] column = new boolean[matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    row[i] = true;
+                    column[j] = true;
+                }
+            }
+        }
+
+        // nullify rows
+        for (int i = 0; i < row.length; i++) {
+            if (row[i]) {
+                row(matrix, i);
+            }
+        }
+
+        // nullify columns
+        for (int j = 0; j < column.length; j++) {
+            if (column[j]) {
+                column(matrix, j);
+            }
+        }
+    }
+
+    public static void zeroMatrixBook2(int[][] matrix) {
+        // 2nd book solution. brings space complexity to O(1) by using the first row and column in matrix instead
+        // of making a new array
+
+        boolean rowHasZero = false;
+        boolean colHasZero = false;
+
+        // check if first row has a zero
+        for (int j = 0; j < matrix[0].length; j++) {
+            if (matrix[0][j] == 0) {
+                rowHasZero = true;
+                break;
+            }
+        }
+
+        // check for column, same as above
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][0] == 0) {
+                colHasZero = true;
+                break;
+            }
+        }
+
+        // now check rest of matrix
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 1; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+
+        // nullify columns on first row
+        for (int j = 1; j < matrix[0].length; j++) {
+            if (matrix[0][j] == 0) {
+                column(matrix, j);
+            }
+        }
+
+        // nullify rows on first column
+        for (int i = 1; i < matrix.length; i++) {
+            if (matrix[i][0] == 0) {
+                row(matrix, i);
+            }
+        }
+
+        // nullify first rows and columns
+        if (rowHasZero) {
+            row(matrix, 0);
+        }
+
+        if (colHasZero) {
+            column(matrix, 0);
+        }
+    }
+
+
+    // 1.9 String Rotation
+    public static void stringRotation() {
+        // my solution...
+
+    }
 }
