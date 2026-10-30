@@ -269,8 +269,14 @@ public class Chapter1 {
 
 
     // 1.9 String Rotation
-    public static void stringRotation() {
+    public static boolean stringRotation(String s1, String s2) {
         // my solution...
+        // and book solution since I have to use isSubstring
 
+        if (s1.length() == s2.length() && !s1.isEmpty()) {
+            String s1s1 = s1 + s1;
+            return s1s1.contains(s2);
+        }
+        return false;
     }
 }

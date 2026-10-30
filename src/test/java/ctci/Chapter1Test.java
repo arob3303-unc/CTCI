@@ -118,4 +118,16 @@ class Chapter1Test {
         Chapter1.zeroMatrixBook2(m);
         assertArrayEquals(expected, m);
     }
+
+    @Test
+    void stringRotation() {
+        String s1 = "waterbottle";
+        String s2 = "erbottlewat";
+
+        String s3 = "austin";
+        String s4 = "ustina";
+
+        assertTrue(Chapter1.stringRotation(s1, s2));
+        assertTrue(Chapter1.stringRotation(s3, s4));
+    }
 }
