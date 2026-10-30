@@ -147,5 +147,37 @@ public class Chapter1 {
     public static void zeroMatrix(int[][] matrix) {
         // my solution
 
+        // my idea, create a copy of the matrix. This is to check if a zero is a real zero.
+        // then if it is real, change the column and row into all zeros.
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int[][] copyMatrix = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                copyMatrix[i][j] = matrix[i][j];
+            }
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0 && copyMatrix[i][j] == 0) {
+                    row(matrix, i);
+                    column(matrix, j);
+                }
+            }
+        }
     }
+    public static void row(int[][] matrix, int i) {
+        for (int m = 0; m < matrix[0].length; m++) {
+            matrix[i][m] = 0;
+        }
+    }
+
+    public static void column(int[][] matrix, int j) {
+        for (int n = 0; n < matrix.length; n++) {
+            matrix[n][j] = 0;
+        }
+    }
+
 }

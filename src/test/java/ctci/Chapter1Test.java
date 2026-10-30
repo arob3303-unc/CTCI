@@ -64,4 +64,22 @@ class Chapter1Test {
         Chapter1.rotateMatrixMine(arr2d); // changes arr2d
         assertArrayEquals(new int[][] {{3,1}, {4,2}}, arr2d);
     }
+
+    @Test
+    void zeroMatrix() {
+        int[][] m = {
+                {0, 1, 1, 1, 0},
+                {1, 1, 1, 1, 1},
+                {0, 1, 1, 1, 0}
+        };
+
+        int[][] expected = {
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0}
+        };
+
+        Chapter1.zeroMatrix(m);
+        assertArrayEquals(expected, m);
+    }
 }
