@@ -118,4 +118,20 @@ public class LeetCode {
         }
         return right - left - 1;              // length of the palindrome found
     }
+
+    // Clone Graph Leetcode
+    // Uses Node Class
+    HashMap<Node, Node> map = new HashMap<>();
+    public Node cloneGraph(Node node) {
+        if (node == null) return null; // null check, helps with speed
+        Node curr = new Node(node.val);
+        map.put(node, curr);
+        for (Node n : node.neighbors) {
+            if (!map.containsKey(n)) {
+                cloneGraph(n);
+            }
+            curr.neighbors.add(map.get(n));
+        }
+        return curr;
+    }
 }
